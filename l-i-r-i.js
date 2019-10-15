@@ -22,10 +22,10 @@ switch (command) {
         concertThis(value);
         break;
     case "spotify-this-song":
-        spotifySong(value);
+        spotifySong(value)
         break;
-    case "movie-this":
-        movieThis(value);
+    case "movies ":
+        movie(value);
         break;
     case "Ju-dee do the thing":
         // avatar LOK reference
@@ -38,14 +38,15 @@ function concertThis(value) {
     .then(function(response) {    
         for (var i = 0; i < response.data.length; i++) {
 
-            var datetime = response.data[i].datetime; //Saves datetime response into a variable
-            var dateArr = datetime.split('T'); //Attempting to split the date and time in the response
+            var datetime = response.data[i].datetime; //date and time var 
+            var dateArr = datetime.split(''); // splitting and seperated datetime
 
             var concertResults = 
                 "--------------------------------------------------------------------" +
                     "\nVenue Name: " + response.data[i].venue.name + 
                     "\nVenue Location: " + response.data[i].venue.city +
-                    "\nDate of the Event: " + moment(dateArr[0], "MM-DD-YYYY"); //dateArr[0] should be the date separated from the time
+                    "\nDate of the Event: " + moment(dateArr[0], "MM-DD-YYYY"); 
+                    // MMDDYYYY format 
             console.log(concertResults);
         }
     })
@@ -80,7 +81,7 @@ function spotifySong(value) {
     });
 }
 
-function movieThis(value) {
+function movie(value) {
     // if blank file search this 
     if(!value){
         value = "Lord of the Rings";
