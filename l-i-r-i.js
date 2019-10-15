@@ -12,11 +12,13 @@ var axios = require('axios'); //To get the information from the APIs for movie a
 
 var fs = require('fs'); //To read the random.txt file for the do-what-it-says function
 
-var command = process.argv[2]; //For the switch statement
-var value = process.argv[3]; //To send the song/movie/concert to their respective functions
+var command = process.argv[2]; //for switch case 
+var value = process.argv[3]; // info for functions (comes after node l-i-r-i.js)
 // practiceing switch case 
 switch (command) {
+    // function name here
     case "concert-this":
+        // 
         concertThis(value);
         break;
     case "spotify-this-song":
@@ -25,11 +27,12 @@ switch (command) {
     case "movie-this":
         movieThis(value);
         break;
-    case "do-what-it-says":
-        doThis(value);
+    case "Ju-dee do the thing":
+        // avatar LOK reference
+        doTheThing(value);
         break;
 };
-
+// function for concert
 function concertThis(value) {
     axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp")
     .then(function(response) {    
@@ -63,11 +66,10 @@ function spotifySong(value) {
         for (var i = 0; i < 5; i++) {
             var spotifyResults = 
                 "--------------------------------------------------------------------" +
-                    "\nArtist(s): " + response.tracks.items[i].artists[0].name + 
-                    "\nSong Name: " + response.tracks.items[i].name +
+                    "\nArtist(s): " + response.tracks.items[i].artists[0].name +
                     "\nAlbum Name: " + response.tracks.items[i].album.name +
+                    "\nSong Name: " + response.tracks.items[i].name +
                     "\nPreview Link: " + response.tracks.items[i].preview_url;
-                    
             console.log(spotifyResults);
         }
     })
@@ -77,10 +79,12 @@ function spotifySong(value) {
 }
 
 function movieThis(value) {
+    // if blank file search this 
     if(!value){
         value = "Lord of the Rings";
     }
     axios.get("https://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy")
+    // promise 
     .then(function(response) {
             var movieResults = 
                 "--------------------------------------------------------------------" +
@@ -100,7 +104,7 @@ function movieThis(value) {
     
 }
 
-function doThis(value) {
+function doTheThing(value) {
 
     fs.readFile("random.txt", "utf8", function(error, data) {
         if (error) {
