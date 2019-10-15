@@ -57,10 +57,12 @@ function concertThis(value) {
 }
 
 function spotifySong(value) {
+    // if no input search Hard Times
     if(!value){
         value = "Hard Times";
     }
     spotify
+    // after reading spotify docs had to add .search type 
     .search({ type: 'track', query: value })
     .then(function(response) {
         for (var i = 0; i < 5; i++) {
