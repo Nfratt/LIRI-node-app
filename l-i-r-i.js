@@ -24,11 +24,10 @@ switch (command) {
     case "spotify-this-song":
         spotifySong(value)
         break;
-    case "movies ":
-        movie(value);
+    case "movie-This":
+        movieThis(value);
         break;
-    case "Ju-dee do the thing":
-        // avatar LOK reference
+    case "Ju-Dee-do-the-thing":
         doTheThing(value);
         break;
 };
@@ -66,7 +65,7 @@ function spotifySong(value) {
     // after reading spotify docs had to add .search type 
     .search({ type: 'track', query: value })
     .then(function(response) {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < response.tracks.items.length; i++) {
             var spotifyResults = 
                 "--------------------------------------------------------------------" +
                     "\nArtist(s): " + response.tracks.items[i].artists[0].name +
@@ -81,7 +80,7 @@ function spotifySong(value) {
     });
 }
 
-function movie(value) {
+function movieThis(value) {
     // if blank file search this 
     if(!value){
         value = "Lord of the Rings";
@@ -107,13 +106,13 @@ function movie(value) {
     
 }
 
-function doTheThing(value) {
+function doTheThing() {
 // error recording 
     fs.readFile("random.txt", "utf8", function(err, data) {
         if (err) {
             return console.log(err);
         }
         var dataArr = data.split(',');
-        spotifySong(dataArr[0], dataArr[1]);
+        spotifySong(dataArr[1]);
     })
 }
