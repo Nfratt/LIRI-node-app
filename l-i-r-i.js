@@ -39,13 +39,13 @@ function concertThis(value) {
         for (var i = 0; i < response.data.length; i++) {
 
             var datetime = response.data[i].datetime; //date and time var 
-            var dateArr = datetime.split(''); // splitting and seperated datetime
+            var datearr = datetime.split(','); // splitting and seperated datetime
 
             var concertResults = 
                 "--------------------------------------------------------------------" +
                     "\nVenue Name: " + response.data[i].venue.name + 
                     "\nVenue Location: " + response.data[i].venue.city +
-                    "\nDate of the Event: " + moment(dateArr[0], "MM-DD-YYYY"); 
+                    "\nDate of the Event: " + moment(datearr[0], "MM-DD-YYYY"); 
                     // MMDDYYYY format 
             console.log(concertResults);
         }
@@ -109,9 +109,9 @@ function movie(value) {
 
 function doTheThing(value) {
 // error recording 
-    fs.readFile("random.txt", "utf8", function(error, data) {
-        if (error) {
-            return console.log(error);
+    fs.readFile("random.txt", "utf8", function(err, data) {
+        if (err) {
+            return console.log(err);
         }
         var dataArr = data.split(',');
         spotifySong(dataArr[0], dataArr[1]);
