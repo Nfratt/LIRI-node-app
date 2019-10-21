@@ -66,10 +66,10 @@ function spotifySong(value) {
         for (var i = 0; i < response.tracks.items.length; i++) {
             var spotifyResults = 
                 "--------------------------------------------------------------------" +
-                    "\nArtist(s): " + response.tracks.items[i].artists[0].name +
-                    "\nAlbum Name: " + response.tracks.items[i].album.name +
-                    "\nSong Name: " + response.tracks.items[i].name +
-                    "\nPreview Link: " + response.tracks.items[i].preview_url;
+                    " Artist(s): " + response.tracks.items[i].artists[0].name +
+                    " Album Name: " + response.tracks.items[i].album.name +
+                    " Song Name: " + response.tracks.items[i].name +
+                    " Preview Link: " + response.tracks.items[i].preview_url;
             console.log(spotifyResults);
         }
     })
@@ -88,14 +88,14 @@ function movieThis(value) {
     .then(function(response) {
             var movieResults = 
                 "--------------------------------------------------------------------" +
-                    "\nMovie Title: " + response.data.Title + 
-                    "\nYear of Release: " + response.data.Year +
-                    "\nIMDB Rating: " + response.data.imdbRating +
-                    "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value +
-                    "\nCountry Produced: " + response.data.Country +
-                    "\nLanguage: " + response.data.Language +
-                    "\nPlot: " + response.data.Plot +
-                    "\nActors/Actresses: " + response.data.Actors;
+                    " Movie Title: " + response.data.Title + 
+                    " Year of Release: " + response.data.Year +
+                    " IMDB Rating: " + response.data.imdbRating +
+                    " Rotten Tomatoes Rating: " + response.data.Ratings[1].Value +
+                    " Country Produced: " + response.data.Country +
+                    " Language: " + response.data.Language +
+                    " Actors/Actresses: " + response.data.Actors;
+                    " Plot: " + response.data.Plot +
             console.log(movieResults);
     })
     .catch(function (error) {
