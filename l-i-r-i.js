@@ -42,9 +42,9 @@ function concertThis(value) {
 
             var concertResults = 
                 "--------------------------------------------------------------------" +
-                    "\nVenue Name: " + response.data[i].venue.name + 
-                    "\nVenue Location: " + response.data[i].venue.city +
-                    "\nDate of the Event: " + moment(datearr[0], "MM-DD-YYYY"); 
+                    " Venue Name: " + response.data[i].venue.name + 
+                    " Venue Location: " + response.data[i].venue.city +
+                    " Date of the Event: " + moment(datearr[0], "MM-DD-YYYY"); 
                     // MMDDYYYY format 
             console.log(concertResults);
         }
