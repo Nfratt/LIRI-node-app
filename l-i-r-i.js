@@ -38,9 +38,8 @@ function concertThis(value) {
 
             var datetime = response.data[i].datetime; //date and time var 
             var datearr = datetime.split(','); // splitting and seperated datetime
-
             var concertResults = 
-                "--------------------------------------------------------------------" +
+                "-----------------------------------" +
                     " Venue Name: " + response.data[i].venue.name + 
                     " Venue Location: " + response.data[i].venue.city +
                     " Date of the Event: " + moment(datearr[0], "MM-DD-YYYY"); 
