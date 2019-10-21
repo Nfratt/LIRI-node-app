@@ -18,7 +18,6 @@ var value = process.argv[3]; // info for functions (comes after node l-i-r-i.js)
 switch (command) {
     // function name here
     case "concert-this":
-        // 
         concertThis(value);
         break;
     case "spotify-this-song":
