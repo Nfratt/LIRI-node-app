@@ -32,7 +32,7 @@ switch (command) {
 };
 // function for concert
 function concertThis(value) {
-    axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp")
+    axios.get("https://rest.bandsintown.com/artists/" +value + "/events?app_id=codingbootcamp")
     .then(function(response) {    
         for (var i = 0; i < response.data.length; i++) {
 
@@ -88,14 +88,14 @@ function movieThis(value) {
     .then(function(response) {
             var movieResults = 
                 "--------------------------------------------------------------------" +
-                    " Movie Title: " + response.data.Title + 
-                    " Year of Release: " + response.data.Year +
-                    " IMDB Rating: " + response.data.imdbRating +
-                    " Rotten Tomatoes Rating: " + response.data.Ratings[1].Value +
-                    " Country Produced: " + response.data.Country +
-                    " Language: " + response.data.Language +
-                    " Actors/Actresses: " + response.data.Actors;
-                    " Plot: " + response.data.Plot +
+                    `Movie Title:  ${ response.data.Title} 
+                    Year of Release: ${response.data.Year}
+                    IMDB Rating: ${response.data.imdbRating }
+                    Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}
+                    Country Produced: ${response.data.Country} 
+                    Language: ${response.data.Language}
+                    Actors/Actresses: ${response.data.Actors};
+                    Plot: ${response.data.Plot}`
             console.log(movieResults);
     })
     .catch(function (error) {
