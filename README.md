@@ -1,6 +1,6 @@
 # LIRI-node-app
 To utilize this app you will need to get your own api key from spotify
-This app is trying to provide the user with concert info,allow the user to search spoitfy for a song and the song info, read a text file and search spotify with the info, and also allow the user to search for movie info as well. 
+This app is trying to provide the user with concert info,allow the user to search spotify for a song and the song info, read a text file and search spotify with the info, and also allow the user to search for movie info as well. 
 use the following commands-
 concert-this- searches for concert info 
 
